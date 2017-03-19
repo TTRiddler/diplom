@@ -1,0 +1,338 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Yanone Kaffeesatz', Arial, sans-serif;
+	font-size: 20px;
+	color: #333;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100%;
+}
+
+/********** ШАПКА САЙТА **********/
+.container-brand {
+	width: 1120px;
+	margin: 0 auto;
+	padding: 20px 10px;
+}
+
+.brand {
+	width: 900px;
+	float: left;
+}
+
+.enter {
+	width: 220px;
+	float: right;
+}
+
+.container-brand, #brand, #enter {
+	height: 70px;
+}
+
+.btn-link {
+	display: block;
+	padding: 9px;
+	background: #000;
+	color: #fff;
+	text-decoration: none;
+	width: 70px;
+	text-align: center;
+	margin: 15px auto;
+	border: 1px solid #000;
+}
+
+.btn-link:hover {
+	background: #fff;
+	color: #000;
+}
+
+.btn-link, .nav li a, .search input, .panel-head a {
+	-webkit-transition: background .55s ease;
+	-moz-transition: background .55s ease;
+	-ms-transition: background .55s ease;
+	-o-transition: background .55s ease;
+	transition: background .55s ease;
+}
+
+/********** МЕНЮ **********/
+.search, .nav ul, .nav li, .nav{
+	height: 50px;
+}
+
+.nav {
+	margin: 20px auto;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	text-transform: uppercase;
+	width: 1120px;
+	letter-spacing: 2px;
+	position: relative;
+}
+
+.nav ul {
+	float: left;
+}
+
+.nav li {
+	height: 50px;	
+	list-style: none;
+	display: inline-block;
+}
+
+.nav li a {
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+	color: #000;
+}
+
+.nav li a:hover {
+	color: #fff;
+	background: #000;
+}
+
+#top-menu{
+	display: none;
+}
+
+.search {
+	float: right;
+}
+
+.search input {
+	margin: 10px 0;
+	width: 200px;
+	height: 30px;
+	background: #fff;
+	border: 1px solid #000;
+	padding-left: 5px;
+	padding-right: 35px;
+}
+
+.search .icon {
+	display: block;
+	position: absolute;
+	margin-left: 175px;
+	margin-top: 15px;
+	z-index: 1;
+	color: #000;
+}
+
+.search input:focus, .search input:active{
+	outline: 1px solid #000;
+	background: #ddd;
+}
+
+/********** ГЛАВНАЯ СТРАНИЦА **********/
+.about-site {
+	padding: 20px 10px;
+	width: 1120px;
+	margin: 0 auto;
+	text-align: justify;
+}
+
+.top-system {
+	text-align: center;
+	width: 1140px;
+	margin: 50px auto;
+}
+
+.container-links {
+	padding: 20px 0;
+	width: 730px;
+	margin: 0 auto;
+	overflow: auto;
+}
+
+.container-links h2 {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.numeric-link p:nth-child(2), .algebraic-link p:nth-child(2){
+	border-left: 4px solid #ccc;
+	padding-left: 10px;
+}
+
+.numeric-link, .algebraic-link {
+	width: 300px;
+	text-align: justify;
+}
+
+.numeric-link {
+	float: left;
+}
+
+.algebraic-link {
+	float: right;
+}
+
+/********** ЧИСЛОВЫЕ СИСТЕМЫ **********/
+#accordion {
+	width: 1140px;
+	margin: 50px auto;
+}
+
+.panel {
+	width: 1120px;
+	margin: 0 auto;
+}
+
+.panel-head {
+	height: 48px;
+	margin: 10px 0;
+	border: 1px solid #000;
+}
+
+#accordion ul li {
+	display: block;
+	height: 29px;
+	border-bottom: 1px solid #000;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+}
+
+.panel-head a, #accordion ul li a {
+	display: block;
+	height: 20px;
+	padding: 15px 15px;
+	text-decoration: none;
+	color: #000;
+}
+
+#accordion ul li a {
+	padding: 5px 15px;
+}
+
+#accordion ul li a:hover {
+	text-decoration: underline;
+	color: #000;
+}
+
+.panel-head a:hover {
+	background: #000;
+	color: #fff;
+}
+
+.active {
+	background: #000;
+}
+
+.active a {
+	color: #fff;
+}
+
+/********** FOOTER **********/
+.contact-footer {
+	background: #444;
+	color: #fff;
+	height: 220px;
+	clear: both;
+}
+
+.contact-footer p {
+	color: #999; 
+}
+
+.contact-footer > div {
+	width: 730px;
+	margin: 0 auto;
+	letter-spacing: 2px;
+	line-height: 200%;
+	height: 220px;
+}
+
+.contact_me {
+	float: left;
+	margin: 30px 0;
+}
+
+.links {
+	float: right;
+	margin: 30px 0;
+}
+
+.contact-footer > div i {
+	color: #fff;
+	padding-right: 10px;
+}
+
+.contact-footer h3 {
+	padding-left: 30px;
+}
+
+.contact-footer p a {
+	color: #999;
+	text-decoration: none;
+}
+
+.contact-footer p a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+footer {
+	height: 50px;
+	background: #222;
+}
+
+footer p {
+	width: 1140px;
+	margin: 0 auto;
+	color: #fff;
+	padding: 14px 0;
+}
+
+.container-footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 270px;
+}
+
+.content {
+	padding-bottom: 270px;
+}
+
+/********** @media(767px) **********/
+@media screen and (max-width: 767px) {
+	.nav {
+		min-height: 50px;
+	}	
+	
+	.nav ul {
+		width: 100%;
+		box-shadow: 0 1px 2px rgba(0,0,0,.3);
+	}
+	
+	.nav li {
+		display: none;
+		background: #fff;
+		border-bottom: 1px solid #000;
+	}
+	
+	#top-menu {
+		display: block;
+	}
+	
+	#top-menu a{
+		background: #777;
+		color: #fff;
+	}
+
+	.nav ul:hover li {
+		display: block;
+	}
+}

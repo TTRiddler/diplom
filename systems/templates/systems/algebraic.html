@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h2 class="top-system">АЛГЕБРАИЧЕСКИЕ СИСТЕМЫ</h2>
+
+    <div id="accordion">
+        {% for section in sections %}
+            <div class="panel">
+                <div class="panel-head"><a href="#">{{ section.section_name }}</a></div>
+                <div class="panel-body">
+                    <ul>
+                        <li><a href="#"> Текст </a></li>
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div class="about-site">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ea laborum sed beatae aspernatur ex eos fugiat reprehenderit, eius aliquid non iusto! Nemo ea qui perferendis eligendi illum repudiandae rerum reiciendis optio, consequuntur dolorum sit, ullam doloribus, deserunt ad asperiores modi culpa enim nobis ex aliquam. Et repudiandae ipsam numquam.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate iste perferendis vitae repellendus facilis! Modi asperiores quasi porro ipsa nihil totam dolor aperiam corporis nisi quo voluptate, accusantium, vitae provident minima dolores aut et expedita cupiditate? Velit enim at similique optio inventore animi numquam quaerat eveniet, deserunt, quae excepturi veniam!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, id eveniet maxime, illum quo architecto asperiores recusandae voluptates nemo? Cum tempora culpa expedita, illo aut sapiente quae assumenda quas, atque in, libero accusantium iure eum! Vero nobis quo autem eveniet qui molestias, sapiente quam. Alias accusantium aliquid nobis quo odit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque modi similique nihil, molestiae ducimus aperiam impedit, porro tempora iure aliquam nobis et qui. Dolorum iusto nam sunt? Impedit error inventore optio, vitae, recusandae sint dolore, cupiditate qui temporibus aliquid minima distinctio voluptatibus tempore sunt consequuntur saepe! Fugiat praesentium sed optio?</p>
+    </div>
+
+    <div class="container-links">
+        <div class="numeric-link">
+            <h2>Числовые системы</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum debitis cum, voluptas, corporis perspiciatis voluptatibus nobis amet sed qui vel!</p>
+            <p><a href="{% url 'numeric' %}" class="btn-link">Подробнее</a></p>
+        </div>
+        <div class="algebraic-link">
+            <h2>Алгебраические системы</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente necessitatibus qui facere a aliquid id impedit sint quisquam? Vel, deleniti.</p>
+            <p><a href="{% url 'algebraic' %}" class="btn-link">Подробнее</a></p>
+        </div>
+    </div>
+{% endblock %}

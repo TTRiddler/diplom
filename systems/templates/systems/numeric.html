@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h2 class="top-system">ЧИСЛОВЫЕ СИСТЕМЫ</h2>
+
+    <div id="accordion">
+        {% for section in sections %}
+            <div class="panel">
+                <div class="panel-head"><a href="#"> {{ section.section_name }} </a></div>
+                <div class="panel-body">
+                    <ul>
+                        {% for subsection in subsections %}
+                            {% if section.id == subsection.section_name_id %}
+                                <li><a href="#"> {{ subsection.subsection_name }} </a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

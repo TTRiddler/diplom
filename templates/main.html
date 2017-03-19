@@ -1,0 +1,73 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Математика - это просто!</title>
+    <link href="{% static 'static/css/main.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+    <script src="https://use.fontawesome.com/9b2feaa200.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{% static 'static/js/scripts.js' %}"></script>
+
+    <!--[if lt IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <div class="container-brand">
+                <div class="brand">
+                    <h1>МАТЕМАТИКА - это просто!</h1>
+                    <p>Сайт - справочник</p>
+                </div>
+                <div class="enter">
+                    <a class="btn-link" href="#">ВОЙТИ</a>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <ul>
+                    <li id="top-menu"><a href="#">Меню</a></li>
+                    <li><a href="{% url 'main' %}">Главная</a></li>
+                    <li><a href="{% url 'numeric' %}">Числовые системы</a></li>
+                    <li><a href="{% url 'algebraic' %}">Алгебраические системы</a></li>
+                    <li><a href="{% url 'main' %}">Контакты</a></li>
+                </ul>
+                <div class="search">
+                    <a href="#" class="icon"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    <input type="search">
+                </div>
+            </nav>
+
+            {% block content %}{% endblock %}
+            
+        </div>
+        <div class="container-footer">
+            <div class="contact-footer">
+                <div>
+                    <div class="contact_me">
+                        <h3>КОНТАКТНАЯ ИНФОРМАЦИЯ</h3>
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i> gurgen.abramyan.1995@gmail.com</p>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i> +7 (967) 670 - 59 - 19</p>
+                        <p><i class="fa fa-vk" aria-hidden="true"></i> vk.com/gurgen.abramyan</p>
+                    </div>
+                    <div class="links">
+                        <h3>ССЫЛКИ</h3>
+                        <p><i class="fa fa-share" aria-hidden="true"></i><a href="{% url 'main' %}">Главная</a></p>                 
+                        <p><i class="fa fa-share" aria-hidden="true"></i><a href="{% url 'numeric' %}">Числовые системы</a></p>                 
+                        <p><i class="fa fa-share" aria-hidden="true"></i><a href="{% url 'algebraic' %}">Алгебраические системы</a></p>                 
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p> 2017 <i class="fa fa-copyright" aria-hidden="true"></i> Gurgen Abramyan</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
