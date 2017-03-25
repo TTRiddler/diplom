@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+{% block content %}
+	<div class="wrap_form">
+		<form method="post" action="{% url 'login' %}">
+			{% csrf_token %}
+
+			<div class="labels">
+				<label for="username">Логин:</label> <br>
+				<label for="password1">Пароль:</label> <br>
+			</div>
+			<div class="inputs">
+				<input name="username" type="text" id="username"> <br>
+				<input name="password" type="password" id="password"> <br>
+			</div>
+
+			{% if login_error %}
+				<label class="login_error">{{ login_error }}</label>
+			{% endif %}
+
+			<div class="buttons">
+				<input class="btn-form" type="submit" name="enter" value="ВОЙТИ">
+				<a class="btn-form" href="{% url 'register' %}">РЕГИСТРАЦИЯ</a>
+			</div>
+		</form>
+	</div>
+{% endblock %}

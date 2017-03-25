@@ -25,7 +25,11 @@
                     <p>Сайт - справочник</p>
                 </div>
                 <div class="enter">
-                    <a class="btn-link" href="#">ВОЙТИ</a>
+                    {% if username %}
+                        <a class="btn-link" href="{% url 'logout' %}">ВЫЙТИ ({{ username }})</a>
+                    {% else %}
+                        <a class="btn-link" href="{% url 'login' %}">ВОЙТИ</a>
+                    {% endif %}
                 </div>
             </div>
 
