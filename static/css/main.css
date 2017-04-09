@@ -182,17 +182,31 @@ body {
 #accordion {
 	width: 1140px;
 	margin: 50px auto;
+	overflow: hidden;
 }
 
 .panel {
-	width: 1120px;
+	width: 530px;
 	margin: 0 auto;
+	float: left;
+}
+
+.panel:nth-child(odd) {
+	padding-right: 40px;
+	padding-left: 20px;
+	clear: both;
 }
 
 .panel-head {
 	height: 48px;
-	margin: 10px 0;
+	margin: 10px 0 0 0;
 	border: 1px solid #000;
+	background: #000;
+	color: #fff;
+	text-align: center;
+	font-size: 22px;
+	line-height: 50px;
+	text-transform: uppercase;
 }
 
 #accordion ul li {
@@ -203,7 +217,7 @@ body {
 	border-right: 1px solid #000;
 }
 
-.panel-head a, #accordion ul li a {
+#accordion ul li a {
 	display: block;
 	height: 20px;
 	padding: 15px 15px;
@@ -220,31 +234,28 @@ body {
 	color: #000;
 }
 
-.panel-head a:hover {
-	background: #000;
-	color: #fff;
-}
-
-.active {
-	background: #000;
-}
-
-.active a {
-	color: #fff;
-}
-
 /********** FORMS **********/
 .wrap_form {
 	width: 458px;
-	padding: 50px 10px;
+	padding: 30px 10px;
 	margin: 50px auto;
 	border: 1px solid #000;
 }
 
-.inputs input {
+.wrap_form h2 {
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+.inputs input{
 	padding: 5px;
 	border: 1px solid #000;
-	margin-bottom: 20px;
+	margin-bottom: 22px;
+	height: 20px;
+}
+
+.lines {
+	overflow: auto;
 }
 
 .labels {
@@ -254,8 +265,9 @@ body {
 
 .labels label{
 	display: block;
-	margin-bottom: 10px;
 	text-align: right;
+	padding: 5px;
+	margin-bottom: 20px;
 }
 
 .inputs {
@@ -263,14 +275,21 @@ body {
 	width: 270px;
 }
 
-.buttons {
+.buttons_signup, .buttons_login {
 	clear: both;
-	width: 210px;
 	margin: 5px auto;
 }
 
-.buttons input {
-	margin-right: 20px;
+.buttons_login {
+	width: 190px;
+}
+
+.buttons_signup {
+	width: 150px;
+}
+
+.buttons_login a {
+	margin-left: 20px;
 }
 
 .btn-form {
@@ -297,7 +316,7 @@ body {
 	clear: both;
 }
 
-.inputs input:focus, .inputs input:active{
+.inputs input:focus, .inputs input:active {
 	outline: 1px solid #000;
 }
 
@@ -372,6 +391,27 @@ footer p {
 
 .content {
 	padding-bottom: 270px;
+}
+
+/********** ФАЙЛ ТЕКСТА **********/
+.wrap-file {
+	width: 1120px;
+	margin: 50px auto;
+	text-align: center;
+}
+
+.file-text {
+	padding: 10px 0;
+	width: 898px;
+	border: none;
+	height: 700px;
+	margin: 0 auto;
+	border: 1px solid #000;
+}
+
+.p-file {
+	width: 900px;
+	margin: 50px auto;
 }
 
 /********** @media(767px) **********/

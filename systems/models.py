@@ -27,7 +27,8 @@ class NumericSection(models.Model):
 
 	section_name = models.ForeignKey('NumericSystem', on_delete=models.CASCADE)
 	subsection_name = models.CharField(max_length=200)
-	subsection_text = models.TextField()
+	file_teacher = models.URLField(max_length=200, null=True, blank=True)
+	file_student = models.URLField(max_length=200, null=True, blank=True)
 	
 
 class AlgebraicSection(models.Model):
@@ -36,5 +37,5 @@ class AlgebraicSection(models.Model):
 
 	section_name = models.ForeignKey('AlgebraicSystem', on_delete=models.CASCADE)
 	subsection_name = models.CharField(max_length=200)
-	subsection_text = models.TextField()
-
+	file_teacher = models.URLField(max_length=200, null=True, blank=True)
+	file_student = models.URLField(max_length=200, null=True, blank=True)

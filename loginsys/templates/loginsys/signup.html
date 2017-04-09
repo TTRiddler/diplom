@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+
+{% block content %}
+	<div class="wrap_form">
+		<h2>РЕГИСТРАЦИЯ</h2>
+		<form method="post" action="{% url 'signup' %}">
+			{% csrf_token %}
+			
+			{% for field in form %}
+				<div class="lines">
+					<div class="labels">
+						{{ field.label_tag }}
+				    </div>
+				    <div class="inputs">
+						{{ field }}
+				    </div>
+				</div>
+			{% endfor %}
+
+			{% for field in form %}
+				{% for error in field.errors %}
+			     	<p style="color: red; font-size: 80%">{{ error }}</p>
+			    {% endfor %}
+		    {% endfor %}
+			
+			<div class="buttons_signup">
+				<input class="btn-form" type="submit" name="enter" value="Зарегистрироваться">
+			</div>
+		</form>
+	</div>
+{% endblock %}

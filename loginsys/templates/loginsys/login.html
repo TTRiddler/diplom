@@ -2,25 +2,34 @@
 
 {% block content %}
 	<div class="wrap_form">
+		<h2>ВХОД</h2>
 		<form method="post" action="{% url 'login' %}">
 			{% csrf_token %}
-
-			<div class="labels">
-				<label for="username">Логин:</label> <br>
-				<label for="password1">Пароль:</label> <br>
+			
+			<div class="lines">
+				<div class="labels">
+					<label for="username">Логин:</label>
+				</div>
+				<div class="inputs">
+					<input name="username" type="text" id="username" value="">
+				</div>
 			</div>
-			<div class="inputs">
-				<input name="username" type="text" id="username"> <br>
-				<input name="password" type="password" id="password"> <br>
+			<div class="lines">
+				<div class="labels">
+					<label for="password">Пароль:</label>
+				</div>
+				<div class="inputs">
+					<input name="password" type="password" id="password" value="">
+				</div>
 			</div>
 
 			{% if login_error %}
 				<label class="login_error">{{ login_error }}</label>
 			{% endif %}
 
-			<div class="buttons">
+			<div class="buttons_login">
 				<input class="btn-form" type="submit" name="enter" value="ВОЙТИ">
-				<a class="btn-form" href="{% url 'register' %}">РЕГИСТРАЦИЯ</a>
+				<a class="btn-form" href="{% url 'signup' %}">РЕГИСТРАЦИЯ</a>
 			</div>
 		</form>
 	</div>

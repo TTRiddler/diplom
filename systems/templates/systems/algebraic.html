@@ -6,10 +6,14 @@
     <div id="accordion">
         {% for section in sections %}
             <div class="panel">
-                <div class="panel-head"><a href="#">{{ section.section_name }}</a></div>
+                <div class="panel-head"> {{ section.section_name }} </div>
                 <div class="panel-body">
                     <ul>
-                        <li><a href="#"> Текст </a></li>
+                        {% for subsection in subsections %}
+                            {% if section.id == subsection.section_name_id %}
+                                <li><a href="{% url 'infoPage_alg' subsection.id %}"> {{ subsection.subsection_name }} </a></li>
+                            {% endif %}
+                        {% endfor %}
                     </ul>
                 </div>
             </div>

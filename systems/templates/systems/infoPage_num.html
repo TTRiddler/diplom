@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h2 class="top-system">{{ subsection.subsection_name }}</h2>
+
+    {% if user_enter %}
+        <p class="p-file"><a href="{{ subsection.file_teacher }}" target="blank" class="btn-form">Редактировать</a></p>
+    {% endif %}
+    
+    <div class="wrap-file">
+        <iframe class="file-text" src="{{ subsection.file_student }}"></iframe>
+    </div> 
+{% endblock %}

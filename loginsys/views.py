@@ -1,21 +1,24 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.contrib.auth.forms import UserCreationForm
-from django.views.decorators.csrf import csrf_protect
+from .forms import SignUpForm
 
 
-@csrf_protect
 def login(request):
 	args = {}
 	if request.POST:
-		username = request.POST.get('username', '')
-		password = request.POST.get('password', '')
+		username = request.POST.get('username')
+		password = request.POST.get('password')
 		user = auth.authenticate(username=username, password=password)
-		if user is not None:
-			auth.login(request, user)
-			return redirect('/')
+		if username and password:
+			if user is not None:
+				auth.login(request, user)
+				return redirect('/')
+			else:
+				args['login_error'] = "Неправильно введен логин/пароль"
+				return render(request, 'loginsys/login.html', args)
 		else:
-			args['login_error'] = "Пользователь не найден"
+			args['login_error'] = "Введите логин/пароль"
 			return render(request, 'loginsys/login.html', args)
 	else:
 		return render(request, 'loginsys/login.html', args)
@@ -24,17 +27,21 @@ def logout(request):
 	auth.logout(request)
 	return redirect('/')
 
-@csrf_protect
-def register(request):
-	args = {}
-	args['form'] = UserCreationForm()
-	if request.POST:
-		newuser_form = UserCreationForm(request.POST)
-		if newuser_form.is_valid():
-			newuser_form.save()
-			newuser = auth.authenticate(username=newuser_form.cleaned_data['username'], password=newuser_form.cleaned_data['password2'])
-			auth.login(request, newuser)
-			return redirect('/')
-		else:
-			args['form'] = newuser_form
-	return render(request, 'loginsys/register.html', args)
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.refresh_from_db()
+            if form.cleaned_data.get('teachers_key') == "ZQUsqDot":
+            	user.profile.teachers_key = True
+            else:
+            	user.profile.teachers_key = False
+            user.save()
+            raw_password = form.cleaned_data.get('password1')
+            user = auth.authenticate(username=user.username, password=raw_password)
+            auth.login(request, user)
+            return redirect('/')
+    else:
+        form = SignUpForm()
+    return render(request, 'loginsys/signup.html', {'form': form})
