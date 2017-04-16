@@ -54,3 +54,7 @@ def infoPage_alg(request, subsection_id=1):
 		{'subsection': AlgebraicSection.objects.get(id=subsection_id),
 		'username': auth.get_user(request).username,
 		'user_enter': user_enter})
+
+def about(request):
+    return render(request, 'systems/about.html', 
+    	{'username': auth.get_user(request).username})

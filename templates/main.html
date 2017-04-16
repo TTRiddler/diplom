@@ -8,6 +8,7 @@
     <link href="{% static 'static/css/main.css' %}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&amp;subset=cyrillic" rel="stylesheet">
     <script src="https://use.fontawesome.com/9b2feaa200.js"></script>
+    <meta name=viewport content="width=device-width, initial-scale=1">
 
     <!--[if lt IE 9]>
         <script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
@@ -24,9 +25,9 @@
                 </div>
                 <div class="enter">
                     {% if username %}
-                        <a class="btn-link" href="{% url 'logout' %}">ВЫЙТИ ({{ username }})</a>
+                        <a id="btn-enter" class="btn-link" href="{% url 'logout' %}">ВЫЙТИ ({{ username }})</a>
                     {% else %}
-                        <a class="btn-link" href="{% url 'login' %}">ВОЙТИ</a>
+                        <a id="btn-enter" class="btn-link" href="{% url 'login' %}">ВОЙТИ</a>
                     {% endif %}
                 </div>
             </div>
@@ -37,12 +38,10 @@
                     <li><a href="{% url 'main' %}">Главная</a></li>
                     <li><a href="{% url 'numeric' %}">Числовые системы</a></li>
                     <li><a href="{% url 'algebraic' %}">Алгебраические системы</a></li>
-                    <li><a href="{% url 'main' %}">Контакты</a></li>
+                    <li><a href="{% url 'about' %}">О проекте</a></li>
+                    <li><a href="http://math.kubsu.ru" target="_blank">ФМ и КН</a></li>
+                    <li><a href="https://www.kubsu.ru" target="_blank">КубГУ</a></li>
                 </ul>
-                <div class="search">
-                    <a href="#" class="icon"><i class="fa fa-search" aria-hidden="true"></i></a>
-                    <input type="search">
-                </div>
             </nav>
 
             {% block content %}{% endblock %}
