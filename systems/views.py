@@ -21,6 +21,12 @@ def algebraic(request):
 		'subsections': AlgebraicSection.objects.all(), 
 		'username': auth.get_user(request).username})
 
+def algebraic2(request):
+	return render(request, 'systems/algebraic2.html', 
+		{'sections': AlgebraicSystem.objects.all(), 
+		'subsections': AlgebraicSection.objects.all(), 
+		'username': auth.get_user(request).username})
+
 def infoPage_num(request, subsection_id=1):
 	try:
 		profile_user = models.Profile.objects.get(user_id=auth.get_user(request).id)

@@ -11,7 +11,7 @@
 
     <div id="accordion">
         {% for section in sections %}
-            {% if section.id <= 5 %}
+            {% if section.id > 5 %}
                 <div class="panel_alg">
                     <div class="panel-head"> {{ section.section_name }} </div>
                     <div class="panel-body">

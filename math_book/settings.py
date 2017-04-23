@@ -25,7 +25,11 @@ SECRET_KEY = '$%pwl&#^j&*!7@91qr%h6s1^!1*tz*w2&pt&uz7x+a04i8+w3a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+	'85.143.213.19',
+	'eazy-math.ru',
+	'www.eazy-math.ru',
+]
 
 
 # Application definition

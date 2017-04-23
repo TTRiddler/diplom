@@ -156,10 +156,11 @@ body {
 	margin: 50px auto;
 	overflow: hidden;
 	padding-left: 10px;
+	font-size: 18px;
 }
 
 .panel_num {
-	width: 158px;
+	width: 185px;
 	margin: 0 auto;
 	float: left;
 }
@@ -204,6 +205,34 @@ body {
 #accordion ul li a:hover {
 	text-decoration: underline;
 	color: #000;
+}
+
+.pages {
+	width: 130px;
+	margin: 0 auto;
+	overflow: auto;
+}
+
+.pages p {
+	width: 70px;
+	float: left;
+}
+
+.pages a {
+	display: block;
+	background: #fff;
+	border: 1px solid #000;
+	color: #000;
+	width: 20px;
+	text-align: center;
+	float: left;
+	margin: 0 3px;
+	text-decoration: none;
+}
+
+.pages a:hover {
+	background: #000;
+	color: #fff;
 }
 
 /********** FORMS **********/
@@ -253,7 +282,7 @@ body {
 }
 
 .buttons_login {
-	width: 190px;
+	width: 200px;
 }
 
 .buttons_signup {
@@ -496,6 +525,59 @@ footer p {
 	.completed div:last-child {
 		padding-right: 5px;
 	}
+
+	#accordion {
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.panel_num {
+		width: 16.6%;
+	}
+
+	.panel_alg {
+		width: 20%;
+	}
+
+	.wrap-file {
+		width: 100%;
+	}
+}
+
+
+/********** @media(950px) **********/
+@media screen and (max-width: 950px) {
+	.panel_num, .panel_alg {
+		width: 100%;
+	}
+
+	.panel_num .panel-head,
+	.panel_alg .panel-head {
+		height: 40px;
+		line-height: 40px;
+	}	
+
+	.panel_num .panel-body,
+	.panel_alg .panel-body {
+		display: none;
+	}
+
+	.panel_num:hover .panel-body,
+	.panel_alg:hover .panel-body{
+		display: block;
+	}
+
+	.panel_num:hover .panel-head,
+	.panel_alg:hover .panel-head{
+		background: #000;
+		color: #fff;
+	}
+
+	.file-text {
+		border: none;
+		width: 100%;
+	}
 }
 
 /********** @media(850px) **********/
@@ -599,5 +681,43 @@ footer p {
 
 	.checked div:last-child p, .completed div:last-child p {
 		border: none;
+	}
+
+	.wrap_form {
+		width: 100%;
+		border: none;
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.brand{
+		width: 100%;
+		float: none;
+	}
+
+	.enter {
+		float: none;
+	}
+
+	.container-brand {
+		height: 100px;
+	}
+
+	body {
+		font-size: 0.9em
+	}
+	
+	.labels {
+		width: 30%;
+	}
+
+	.labels label {
+		text-align: center;
+	}
+
+	.inputs {
+		width: 70%;
 	}
 }
