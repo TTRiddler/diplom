@@ -7,6 +7,9 @@ body {
 	font-family: 'Yanone Kaffeesatz', Arial, sans-serif;
 	font-size: 20px;
 	color: #333;
+
+	-webkit-font-smoothing: antialiased;
+	-webkit-overflow-scrolling: touch;
 }
 
 html,
@@ -31,6 +34,10 @@ body {
 	float: left;
 }
 
+.brand h1 span {
+	color: #0099ff;
+}
+
 .enter {
 	width: 220px;
 	float: right;
@@ -43,7 +50,7 @@ body {
 .btn-link {
 	display: block;
 	padding: 9px;
-	background: #000;
+	background: #0099ff;
 	color: #fff;
 	text-decoration: none;
 	width: 70px;
@@ -99,11 +106,16 @@ body {
 
 .nav li a:hover {
 	color: #fff;
-	background: #000;
+	background: #0099ff;
 }
 
 #top-menu{
 	display: none;
+}
+
+.active {
+	color: #fff;
+	background: #0099ff;
 }
 
 /********** ГЛАВНАЯ СТРАНИЦА **********/
@@ -133,7 +145,7 @@ body {
 }
 
 .numeric-link p:nth-child(2), .algebraic-link p:nth-child(2){
-	border-left: 4px solid #ccc;
+	border-left: 4px solid #0099ff;
 	padding-left: 10px;
 }
 
@@ -185,9 +197,9 @@ body {
 
 #accordion ul li {
 	display: block;
-	border-left: 1px solid #000;
-	border-right: 1px solid #000;
-	border-bottom: 1px solid #000;
+	border-left: 1px solid #0099ff;
+	border-right: 1px solid #0099ff;
+	border-bottom: 1px solid #0099ff;
 }
 
 
@@ -204,7 +216,14 @@ body {
 
 #accordion ul li a:hover {
 	text-decoration: underline;
-	color: #000;
+	color: #0099ff;
+}
+
+#accordion ul li.section_type {
+	border-color: #000;
+	text-align: center;
+	background: #0099ff;
+	color: #fff;
 }
 
 .pages {
@@ -231,7 +250,7 @@ body {
 }
 
 .pages a:hover {
-	background: #000;
+	background: #0099ff;
 	color: #fff;
 }
 
@@ -295,7 +314,7 @@ body {
 
 .btn-form {
 	color: #fff;
-	background: #000;
+	background: #0099ff;
 	display: inline-block;
 	text-decoration: none;
 	padding: 10px;
@@ -352,7 +371,7 @@ body {
 }
 
 .contact-footer > div i {
-	color: #fff;
+	color: #0099ff;
 	padding-right: 10px;
 }
 
@@ -366,7 +385,7 @@ body {
 }
 
 .contact-footer p a:hover {
-	color: #fff;
+	color: #0099ff;
 	text-decoration: underline;
 }
 
@@ -570,7 +589,7 @@ footer p {
 
 	.panel_num:hover .panel-head,
 	.panel_alg:hover .panel-head{
-		background: #000;
+		background: #0099ff;
 		color: #fff;
 	}
 
@@ -622,15 +641,12 @@ footer p {
 
 	.numeric-link {
 		width: 100%;
-		border-top: 3px solid #000;
-		border-bottom: 3px solid #000;
 		margin-bottom: 20px;
 		padding: 10px 0;
 	}
 
 	.algebraic-link {
 		width: 100%;
-		border-bottom: 3px solid #000;
 		margin-bottom: 20px;
 		padding: 10px 0;
 	}

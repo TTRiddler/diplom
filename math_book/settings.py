@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
 	'85.143.213.19',
 	'eazy-math.ru',
 	'www.eazy-math.ru',
+	'127.0.0.1',
 ]
 
 

@@ -29,7 +29,7 @@ class NumericSection(models.Model):
 	subsection_name = models.CharField(max_length=200)
 	file_teacher = models.URLField(max_length=200, null=True, blank=True)
 	file_student = models.URLField(max_length=200, null=True, blank=True)
-	
+
 
 class AlgebraicSection(models.Model):
 	class Meta:
@@ -39,3 +39,15 @@ class AlgebraicSection(models.Model):
 	subsection_name = models.CharField(max_length=200)
 	file_teacher = models.URLField(max_length=200, null=True, blank=True)
 	file_student = models.URLField(max_length=200, null=True, blank=True)
+	section_type = models.BooleanField()
+
+	def __str__(self):
+		return str(self.subsection_name)
+
+
+class AlgebraicSubsection(models.Model):
+	class Meta:
+		db_table = "AlgebraicSubsection"
+
+	subsection_name = models.ForeignKey('AlgebraicSection', on_delete=models.CASCADE)
+	subsection_sub = models.CharField(max_length=200, null=True)

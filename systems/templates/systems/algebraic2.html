@@ -16,10 +16,33 @@
                     <div class="panel-head"> {{ section.section_name }} </div>
                     <div class="panel-body">
                         <ul>
+                            <li class="section_type">Элементарная математика</li>
                             {% for subsection in subsections %}
+                                {% if subsection.section_type %}
                                     {% if section.id == subsection.section_name_id %}
                                         <li><a href="{% url 'infoPage_alg' subsection.id %}"> {{ subsection.subsection_name }} </a></li>
+                                        {% for sub in subsection_sub %}
+                                            {% if subsection.id == sub.subsection_name_id %}
+                                                <li><a href="{% url 'infoPage_alg' subsection.id %}"> {{ sub.subsection_sub }} </a></li> 
+                                            {% endif %}
+                                        {% endfor %}
                                     {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                        <ul>
+                            <li class="section_type">Высшая математика</li>
+                            {% for subsection in subsections %}
+                                {% if not subsection.section_type %}
+                                    {% if section.id == subsection.section_name_id %}
+                                        <li><a href="{% url 'infoPage_alg' subsection.id %}"> {{ subsection.subsection_name }} </a></li>
+                                        {% for sub in subsection_sub %}
+                                            {% if subsection.id == sub.subsection_name_id %}
+                                                <li><a href="{% url 'infoPage_alg' subsection.id %}"> {{ sub.subsection_sub }} </a></li> 
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endif %}
                             {% endfor %}
                         </ul>
                     </div>

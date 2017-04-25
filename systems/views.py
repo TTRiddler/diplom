@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import NumericSystem, AlgebraicSystem, NumericSection, AlgebraicSection
+from .models import NumericSystem, AlgebraicSystem, NumericSection, AlgebraicSection, AlgebraicSubsection
 from django.contrib import auth
 from loginsys import models
 from django.core.exceptions import ObjectDoesNotExist
@@ -18,13 +18,15 @@ def numeric(request):
 def algebraic(request):
 	return render(request, 'systems/algebraic.html', 
 		{'sections': AlgebraicSystem.objects.all(), 
-		'subsections': AlgebraicSection.objects.all(), 
+		'subsections': AlgebraicSection.objects.all(),
+		'subsection_sub': AlgebraicSubsection.objects.all(),
 		'username': auth.get_user(request).username})
 
 def algebraic2(request):
 	return render(request, 'systems/algebraic2.html', 
 		{'sections': AlgebraicSystem.objects.all(), 
-		'subsections': AlgebraicSection.objects.all(), 
+		'subsections': AlgebraicSection.objects.all(),
+		'subsection_sub': AlgebraicSubsection.objects.all(),
 		'username': auth.get_user(request).username})
 
 def infoPage_num(request, subsection_id=1):
